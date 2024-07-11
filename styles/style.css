@@ -1,0 +1,293 @@
+@import url("reset.css");
+
+/* =======================  Fonts  ======================= */
+
+@font-face {
+    font-family: teshrinBlack;
+    src: url(../Fonts/TeshrinAR+LT-Black.otf);
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: teshrinBold;
+    src: url(../Fonts/TeshrinAR+LT-Bold.otf);
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: teshrinMedium;
+    src: url(../Fonts/TeshrinAR+LT-Medium.otf);
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: teshrinRegular;
+    src: url(../Fonts/TeshrinAR+LT-Regular.otf);
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: teshrinLight;
+    src: url(../Fonts/TeshrinAR+LT-Light.otf);
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: teshrinExatralight;
+    src: url(../Fonts/TeshrinAR+LT-ExtraLight.otf);
+    font-weight: normal;
+    font-display: swap;
+}
+
+
+/* =======================  KEYFRAMES  ======================= */
+
+@keyframes cart-PopUp {
+    from {bottom: -10px;}
+    to {bottom: -363px;}
+}
+
+@keyframes cart-PopDown {
+    from {bottom: -363px;}
+    to {bottom: -10px;}
+}
+
+/* Regular Styles */
+
+body {
+    direction: rtl;
+    font-family: teshrinRegular;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.container {
+    width: 1200px;
+    /* background-color: red; */
+    margin: 0 auto;
+}
+
+
+/* =======================  Header  ======================= */
+
+#header {
+    background-color: #44db65;
+    height: 600px;
+}
+
+
+#header #header-section {
+    display: flex;
+}
+
+#header #header-section .right {
+    align-self: center;
+}
+
+#header #header-section .left img {
+    width: 710px;
+    position: relative;
+    top: 50px;
+}
+
+
+#header #header-section .right .title {
+    font-family: teshrinBold;
+    font-size: 50px;
+    color: #101010;
+}
+
+#header #header-section .right .text {
+    color: #282727;
+    padding: 25px 0 15px 15px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+
+#header #header-section .right .btn {
+    font-family: teshrinMedium;
+    background-color: #288241;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#header #header-section .right .btn:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+
+/* =======================  Products  =======================*/
+
+
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#products .product-item {
+    flex-basis: 280px;
+    border: 1px solid #e0e0e0;
+    margin-top: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.5);
+    animation: ease-in-out;
+    animation-duration: 0.5s;
+}
+
+#products .product-item:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.4);
+}
+
+#products .product-item .product-image img {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#products .product-item .product-title {
+    font-family: teshrinBold;
+    padding: 10px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+#products .product-item .product-instock {
+    color: red;
+    font-size: 15px;
+    padding: 0 10px 10px 0;
+}
+
+#products .product-item .product-data {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+#products .product-item .product-data .add-to-cart i {
+    color: #288241;
+    animation: ease-in-out;
+    animation-duration: 1s;
+}
+
+#products .product-item .product-data .add-to-cart i:hover {
+    cursor: pointer;
+    color: #1f6533;
+}
+
+
+/* =======================  Cart  ======================= */
+
+
+.cart {
+    background-color: #d8d8d8;
+    width: 325px;
+    height: 400px;
+    position: fixed;
+    left: 20px;
+    bottom: -363px;
+    border-radius: 7px;
+
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.cart .cart-header {
+    background-color: #388b3c;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 0;
+    border-radius: 7px 7px 0 0;
+    user-select: none;
+}
+
+.cart .cart-header:hover {
+    cursor: pointer;
+}
+
+.cart .cart-items {
+    height: 300px;
+    overflow-x: auto;
+}
+
+.cart .cart-item .p-name:hover {
+    background-color: rgba(223, 52, 52, 0.788);
+    cursor: pointer;
+}
+
+.cart .p-unit {
+    user-select: none;
+    text-align: center;
+}
+
+
+.cart .cart-item .plus {
+    background-color: green;
+    display: inline-block;
+    color: #fff;
+    width: 12px;
+    height: 12px;
+}
+
+.cart .cart-item .plus:hover {
+    background-color: rgb(0, 80, 0);
+    cursor: pointer;
+}
+
+.cart .cart-item .minus {
+    background-color: red;
+    display: inline-block;
+    color: #fff;
+    width: 12px;
+    height: 12px;
+}
+
+.cart .cart-item .minus:hover {
+    background-color: rgb(208, 0, 0);
+    cursor: pointer;
+}
+
+.cart .cart-items .cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.cart .total {
+    position: relative;
+    text-align: center;
+}
+
+
+/* =======================  Footer  ======================= */
+
+
+#footer {
+    background-color: #3b3b3b;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+}
